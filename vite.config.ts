@@ -10,6 +10,7 @@ import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import { microCustomPlugin } from './build/vitePlugins'
+const { resolve } = require('path')
 
 const getEnvFn = (mode, target) => {
   return loadEnv(mode, process.cwd())[target]
@@ -28,6 +29,20 @@ export default ({ mode }) => defineConfig({
       }
     }),
   ],
+  resolve: {
+    alias: {
+      '/@': resolve(__dirname, 'src'),
+      '/#': resolve(__dirname),
+      // views: resolve(__dirname, './src/views'),
+      // components: resolve(__dirname, './src/components'),
+      // utils: resolve(__dirname, './src/utils'),
+      // less: resolve(__dirname, "./src/less"),
+      // assets: resolve(__dirname, "./src/assets"),
+      // com: resolve(__dirname, "./src/components"),
+      // store: resolve(__dirname, "./src/store"),
+      // mixins: resolve(__dirname, "./src/mixins")
+    }
+  },
   server: {
     port: 8082,
     headers: {
