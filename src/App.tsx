@@ -19,8 +19,8 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
-import Home from "/@/views/home";
-import About from "/@/views/about";
+import Home from "./views/home";
+import About from "./views/about";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,7 +30,7 @@ function App() {
       <Card sx={{ minWidth: 275, maxWidth: 500, margin: "90px auto" }}>
         <CardContent>
           <Routes>
-            <Route index path="/" element={<Home />}></Route>
+            <Route path="/" element={<Home />}></Route>
             <Route path="/about" element={<About />}></Route>
           </Routes>
         </CardContent>
