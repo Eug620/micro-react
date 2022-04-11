@@ -1,10 +1,10 @@
 /*
  * @Author       : Eug
  * @Date         : 2022-03-31 16:16:43
- * @LastEditTime : 2022-04-01 16:30:08
+ * @LastEditTime : 2022-04-11 15:25:24
  * @LastEditors  : Eug
  * @Descripttion : Descripttion
- * @FilePath     : /github/micro-react/src/App.tsx
+ * @FilePath     : /micro-react/src/App.tsx
  */
 import { useState } from "react";
 import "./App.scss";
@@ -21,23 +21,28 @@ import Typography from "@mui/material/Typography";
 
 import Home from "./views/home";
 import About from "./views/about";
+import Layout from './views/layout'
+import React from "react";
 
 function App() {
   const [count, setCount] = useState(0);
   return (
     <div className="App">
-      {BasicCard()}
+      {/* {BasicCard()} */}
       <Card sx={{ minWidth: 275, maxWidth: 500, margin: "90px auto" }}>
         <CardContent>
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/about" element={<About />}></Route>
+            <Route path="/" element={<Layout/>}>
+              <Route index element={<Home />}></Route>
+              <Route path="about" element={<About />}></Route>
+            </Route>
           </Routes>
         </CardContent>
       </Card>
     </div>
   );
 }
+
 
 function BasicCard() {
   return (
