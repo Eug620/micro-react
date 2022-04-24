@@ -1,7 +1,7 @@
 /*
  * @Author       : Eug
  * @Date         : 2022-03-31 16:16:43
- * @LastEditTime : 2022-04-01 16:33:56
+ * @LastEditTime : 2022-04-24 19:47:07
  * @LastEditors  : Eug
  * @Descripttion : Descripttion
  * @FilePath     : /github/micro-react/vite.config.ts
@@ -10,6 +10,7 @@ import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import { microCustomPlugin } from './build/vitePlugins'
+
 const { resolve } = require('path')
 
 const getEnvFn = (mode, target) => {
@@ -27,7 +28,7 @@ export default ({ mode }) => defineConfig({
           VITE_APP_TITLE: getEnvFn(mode, 'VITE_APP_TITLE')
         }
       }
-    }),
+    })
   ],
   resolve: {
     alias: {
@@ -69,23 +70,23 @@ export default ({ mode }) => defineConfig({
       },
     },
   },
-  css: {
-    // [WARNING] "@charset" must be the first rule in the file
-    postcss: {
-      plugins: [
-        {
-          postcssPlugin: 'internal:charset-removal',
-          AtRule: {
-            charset: (atRule) => {
-              if (atRule.name === 'charset') {
-                atRule.remove();
-              }
-            }
-          }
-        }
-      ],
-    },
-  },
+  // css: {
+  //   // [WARNING] "@charset" must be the first rule in the file
+  //   postcss: {
+  //     plugins: [
+  //       {
+  //         postcssPlugin: 'internal:charset-removal',
+  //         AtRule: {
+  //           charset: (atRule) => {
+  //             if (atRule.name === 'charset') {
+  //               atRule.remove();
+  //             }
+  //           }
+  //         }
+  //       }
+  //     ],
+  //   },
+  // },
   //调整控制台输出的级别 'info' | 'warn' | 'error' | 'silent'
   logLevel: 'info',
   //设为 false 可以避免 Vite 清屏而错过在终端中打印某些关键信息
