@@ -17,6 +17,9 @@
     "noEmit": true,
     "skipDefaultLibCheck": true,
     "jsx": "react",
+    "paths": {
+      "@/*": ["src/*"],
+    }
   },
   "include": ["src", "typings"],
   "references": [{ "path": "./tsconfig.node.json" }],

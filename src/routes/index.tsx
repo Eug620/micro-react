@@ -8,10 +8,10 @@ import {
 
 import type { RouteObject } from "react-router-dom";
 import Layout from "../layout";
-import About from "../views/About/index";
-import Home from "../views/Home/index";
-import NotFound from "../views/NotFound/index";
-import Todolist from "../views/Todolist/index";
+import About from "@/views/About/index";
+import Home from "@/views/Home/index";
+import NotFound from "@/views/NotFound/index";
+import Todolist from "@/views/Todolist/index";
 
 export const BaseRoutesURL = "/base/developer";
 

@@ -34,8 +34,7 @@ export default ({ mode }) => defineConfig({
   ],
   resolve: {
     alias: {
-      '/@': resolve(__dirname, 'src'),
-      '/#': resolve(__dirname),
+      '@': resolve(__dirname, 'src'),
       // views: resolve(__dirname, './src/views'),
       // components: resolve(__dirname, './src/components'),
       // utils: resolve(__dirname, './src/utils'),
@@ -44,7 +43,8 @@ export default ({ mode }) => defineConfig({
       // com: resolve(__dirname, "./src/components"),
       // store: resolve(__dirname, "./src/store"),
       // mixins: resolve(__dirname, "./src/mixins")
-    }
+    },
+    extensions: ['.js', '.json', '.ts', '.tsx'], // 使用路径别名时想要省略的后缀名，可以自己 增减
   },
   server: {
     port: 8082,
