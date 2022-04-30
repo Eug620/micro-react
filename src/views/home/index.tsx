@@ -6,12 +6,10 @@
  * @Descripttion : Descripttion
  * @FilePath     : /micro-react/src/views/home/index.tsx
  */
-import React from "react"
-
+import React from "react";
+import { Card } from '@arco-design/web-react';
 function Home() {
-    return(
-        <div>home</div>
-    )
+  return <Card style={{height: '100%'}}>home</Card>;
 }
 
-export default Home
+export default Home;

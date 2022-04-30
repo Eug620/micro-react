@@ -10,7 +10,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import { BrowserRouter } from 'react-router-dom';
-// import './index.css'
+import './assets/styles/index.scss'
 
 // 注册了此事件说明是微前端环境，否则说明是子项目环境
 if (window.eventCenterForMicroVue) {
@@ -20,10 +20,11 @@ if (window.eventCenterForMicroVue) {
 }
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
+  // </React.StrictMode>
+  ,
   document.getElementById('app-react')
 )

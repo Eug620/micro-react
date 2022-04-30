@@ -1,9 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
+import { Card } from "@arco-design/web-react";
 
 function About() {
-    return (
-        <div>about</div>
-    )
+  return <Card style={{ height: "100%" }}>About</Card>;
 }
 
-export default About
+export default About;

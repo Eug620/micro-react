@@ -6,20 +6,11 @@
  * @Descripttion : Descripttion
  * @FilePath     : /github/micro-react/src/App.tsx
  */
-import { useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
 import React from "react";
-
+import BaseRoutes from './routes'
 function App() {
-  const [count, setCount] = useState(0);
   return (
-    <div className="App">
-      app
-      <h1 className="text-3xl font-bold underline">
-        Hello!
-      </h1>
-      {count}
-    </div>
+    <BaseRoutes/>
   );
 }
 

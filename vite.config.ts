@@ -10,6 +10,7 @@ import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import { microCustomPlugin } from './build/vitePlugins'
+import vitePluginForArco from '@arco-plugins/vite-react'
 
 const { resolve } = require('path')
 
@@ -28,7 +29,8 @@ export default ({ mode }) => defineConfig({
           VITE_APP_TITLE: getEnvFn(mode, 'VITE_APP_TITLE')
         }
       }
-    })
+    }),
+    vitePluginForArco({style:'css'})
   ],
   resolve: {
     alias: {

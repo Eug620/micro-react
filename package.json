@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mui/material": "^5.5.3",
+    "@arco-design/web-react": "^2.32.2",
     "@types/node": "^17.0.23",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -19,12 +19,12 @@
     "vite-plugin-html": "^3.2.0"
   },
   "devDependencies": {
+    "@arco-plugins/vite-react": "^1.1.0",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "@vitejs/plugin-react": "^1.0.7",
     "autoprefixer": "^10.4.5",
     "postcss": "^8.4.12",
-    "tailwindcss": "^3.0.24",
     "typescript": "^4.5.4",
     "vite": "^2.9.0"
   }
