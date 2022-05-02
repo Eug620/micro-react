@@ -7,11 +7,11 @@ import {
 } from "@arco-design/web-react/icon";
 
 import type { RouteObject } from "react-router-dom";
-import Layout from "../layout";
-import About from "@/views/About";
-import Home from "@/views/Home";
-import NotFound from "@/views/NotFound";
-import Todolist from "@/views/Todolist";
+import Layout from "@/layout";
+import About from "@/views/about";
+import Home from "@/views/home";
+import NotFound from "@/views/notFound";
+import Todolist from "@/views/todolist";
 
 export const BaseRoutesURL = "/base/developer";
 
