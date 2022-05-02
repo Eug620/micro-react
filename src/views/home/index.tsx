@@ -8,7 +8,7 @@
  */
 import React from "react";
 import { Card } from '@arco-design/web-react';
-function Home() {
+const Home:React.FC = () => {
   return <Card style={{height: '100%'}}>home</Card>;
 }
 
