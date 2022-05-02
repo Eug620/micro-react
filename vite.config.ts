@@ -12,7 +12,7 @@ import { createHtmlPlugin } from 'vite-plugin-html'
 import { microCustomPlugin } from './build/vitePlugins'
 import vitePluginForArco from '@arco-plugins/vite-react'
 
-const { resolve } = require('path')
+const { resolve, join } = require('path')
 
 const getEnvFn = (mode, target) => {
   return loadEnv(mode, process.cwd())[target]
@@ -34,7 +34,7 @@ export default ({ mode }) => defineConfig({
   ],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
+      '@': resolve(__dirname, './src'),
       // views: resolve(__dirname, './src/views'),
       // components: resolve(__dirname, './src/components'),
       // utils: resolve(__dirname, './src/utils'),

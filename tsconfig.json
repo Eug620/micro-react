@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
@@ -19,7 +19,7 @@
     "noEmit": true,
     "skipDefaultLibCheck": true,
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": ["./src/*"],
     }
   },
   "include": ["./src", "typings", "src/**/*.tsx", "src/**/*.ts", "src/**/*.d.ts"],
