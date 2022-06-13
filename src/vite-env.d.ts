@@ -11,6 +11,3 @@
 interface Window {
   eventCenterForMicroVue?: any;
 }
-declare module '*.tsx' {
-  export default React.Component | React.FC
-}

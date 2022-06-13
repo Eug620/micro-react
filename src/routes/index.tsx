@@ -30,7 +30,7 @@ export const BaseRoutes: any[] = [
     name: "About",
   },
   {
-    path: "todolist",
+    path: "todolist/:id",
     element: <Todolist />,
     icon: <IconCheck />,
     name: "Todolist",
