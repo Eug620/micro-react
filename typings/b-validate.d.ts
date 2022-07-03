@@ -1,1 +1,3 @@
-// declare module 'b-validate'
+declare module 'b-validate' {
+    type ValidateMessagesTemplateType = any
+}
