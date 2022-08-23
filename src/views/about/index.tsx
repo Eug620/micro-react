@@ -6,7 +6,11 @@ import { useNavigate } from "react-router-dom";
 const About: React.FC = (props:any) => {
   const naviate = useNavigate()
   const handleToList = () => {
-    naviate('/base/developer/todolist/123?name=zhangsan')
+    naviate('/todolist/123?name=zs')
+  }
+  const useLogout = () => {
+    localStorage.removeItem('token')
+    naviate('/login')
   }
   return (
     <BaseCard>
@@ -16,6 +20,7 @@ const About: React.FC = (props:any) => {
       <Button type="primary" onClick={props.handleAdd2}>累加2</Button>
       <br />
       <Button onClick={handleToList}>to list</Button>
+      <Button onClick={useLogout}>logout</Button>
     </BaseCard>
   )
 };

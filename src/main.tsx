@@ -24,7 +24,7 @@ if (window.eventCenterForMicroVue) {
 ReactDOM.render(
   // <React.StrictMode>
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename='/base/developer/'>
       <App />
     </BrowserRouter>
   </Provider>

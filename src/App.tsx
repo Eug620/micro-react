@@ -8,9 +8,11 @@
  */
 import React from "react";
 import BaseRoutes from './routes'
+import InitRoute from './routes/routes'
 function App() {
   return (
-    <BaseRoutes/>
+    // <BaseRoutes/>
+    <InitRoute/>
   );
 }
 

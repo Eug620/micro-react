@@ -2,7 +2,7 @@ import React from "react";
 import "./index.scss";
 import { Layout, Menu } from "@arco-design/web-react";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
-import { BaseRoutesURL, BaseRoutes } from "../routes";
+import { MenuRoutes } from "../routes/routes";
 
 const MenuItem = Menu.Item;
 const Header = Layout.Header;
@@ -24,10 +24,10 @@ function BaseMenu(props: any) {
       {...props}
       onClickMenuItem={handleMenuChange}
     >
-      {BaseRoutes.map((route) => {
+      {MenuRoutes.map((route) => {
         return (
           <MenuItem
-            key={`${BaseRoutesURL}${route.index ? "" : "/"}${route.path}`}
+            key={route.path}
           >
             {route.icon}
             {route.name}
