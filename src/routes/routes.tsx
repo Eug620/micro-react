@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2022-08-24 15:06:57
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-03-08 17:57:37
+ * @LastEditTime : 2023-03-08 18:58:58
  * @FilePath     : /micro-react/src/routes/routes.tsx
  * @Description  : filename
  * 
@@ -12,15 +12,24 @@
 import React, { lazy, Suspense } from 'react'
 import { Navigate, useRoutes } from 'react-router-dom'
 import * as Icons from "@arco-design/web-react/icon";
+import { resolveComponent } from '@/importRoutercom'
 const FallbackRender = () => {
     return (
         <></>
     )
 }
 const lazyLoad = (moduleName: string): any => {
-    const Module = lazy(() => {
+    const Moudule = resolveComponent(moduleName)
+    return (
+        <Suspense fallback={<FallbackRender/>}>
+            <Moudule />
+        </Suspense>
+    )
+
+    const Module: React.Component | React.FC = lazy(() => {
         /* @vite-ignore */
-        return import(`../${moduleName}.tsx`)
+        return resolveComponent(moduleName)
+        return import(`../${moduleName}.tsx`) 
     })
     console.log(moduleName, Module);
 
@@ -63,19 +72,19 @@ export const MenuRoutes = [
         icon: lazyLoadIcon('IconHome'),
         name: 'dashboard',
         path: '/base/developer/dashboard',
-        element: lazyLoad('views/home/index')
+        element: lazyLoad('home/index')
     },
     {
         icon: lazyLoadIcon('IconClockCircle'),
         name: 'about',
         path: '/base/developer/about',
-        element: lazyLoad('views/about/index')
+        element: lazyLoad('about/index')
     },
     {
         icon: lazyLoadIcon('IconCheck'),
         name: 'todolist',
         path: '/base/developer/todolist/:id',
-        element: lazyLoad('views/to-do-list/index')
+        element: lazyLoad('to-do-list/index')
     }
 ]
 const BaseRouteInstance = [
@@ -92,13 +101,13 @@ const BaseRouteInstance = [
     },
     {
         path: "*",
-        element: lazyLoad('views/not-found/index'),
+        element: lazyLoad('not-found/index'),
     }
 ]
 
 
 const InitRoute = () => {
-    return useRoutes(BaseRouteInstance)
+    // return useRoutes(BaseRouteInstance)
     return (
         <Suspense fallback={<FallbackRender />}>
             {useRoutes(BaseRouteInstance)}
