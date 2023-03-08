@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2022-07-03 16:31:45
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-01-13 13:53:26
+ * @LastEditTime : 2023-03-08 19:02:52
  * @FilePath     : /micro-react/src/routes/index.tsx
  * @Description  : filename
  * 
@@ -17,7 +17,7 @@ import {
 } from "@arco-design/web-react/icon";
 
 import type { RouteObject } from "react-router-dom";
-import Layout from "@/layout";
+import Layout from "@/views/layout";
 import About from "@/views/about";
 import Home from "@/views/home";
 import NotFound from "@/views/not-found";

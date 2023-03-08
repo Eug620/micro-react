@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2022-08-24 15:06:57
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-03-08 18:58:58
+ * @LastEditTime : 2023-03-08 19:02:40
  * @FilePath     : /micro-react/src/routes/routes.tsx
  * @Description  : filename
  * 
@@ -26,18 +26,18 @@ const lazyLoad = (moduleName: string): any => {
         </Suspense>
     )
 
-    const Module: React.Component | React.FC = lazy(() => {
-        /* @vite-ignore */
-        return resolveComponent(moduleName)
-        return import(`../${moduleName}.tsx`) 
-    })
-    console.log(moduleName, Module);
+    // const Module: React.Component | React.FC = lazy(() => {
+    //     /* @vite-ignore */
+    //     return resolveComponent(moduleName)
+    //     return import(`../${moduleName}.tsx`) 
+    // })
+    // console.log(moduleName, Module);
 
-    return (
-        <Suspense fallback={<FallbackRender/>}>
-            <Module />
-        </Suspense>
-    )
+    // return (
+    //     <Suspense fallback={<FallbackRender/>}>
+    //         <Module />
+    //     </Suspense>
+    // )
 }
 const lazyLoadIcon = (iconName: string): any => {
     // const IconModule = Icons[iconName]
