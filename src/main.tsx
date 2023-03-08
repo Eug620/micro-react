@@ -1,10 +1,10 @@
 /*
  * @Author       : Eug
  * @Date         : 2022-03-31 16:16:43
- * @LastEditTime : 2022-04-24 20:12:06
- * @LastEditors  : Eug
+ * @LastEditTime : 2023-01-13 13:54:41
+ * @LastEditors  : eug yyh3531@163.com
  * @Descripttion : Descripttion
- * @FilePath     : /github/micro-react/src/main.tsx
+ * @FilePath     : /micro-react/src/main.tsx
  */
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -24,7 +24,7 @@ if (window.eventCenterForMicroVue) {
 ReactDOM.render(
   // <React.StrictMode>
   <Provider store={store}>
-    <BrowserRouter basename='/base/developer/'>
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </Provider>

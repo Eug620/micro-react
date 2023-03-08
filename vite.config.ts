@@ -1,10 +1,10 @@
 /*
  * @Author       : Eug
  * @Date         : 2022-03-31 16:16:43
- * @LastEditTime : 2022-04-24 19:47:07
- * @LastEditors  : Eug
+ * @LastEditTime : 2023-01-13 14:08:50
+ * @LastEditors  : eug yyh3531@163.com
  * @Descripttion : Descripttion
- * @FilePath     : /github/micro-react/vite.config.ts
+ * @FilePath     : /micro-react/vite.config.ts
  */
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -19,7 +19,7 @@ const getEnvFn = (mode, target) => {
 }
 // https://vitejs.dev/config/
 export default ({ mode }) => defineConfig({
-  base: `${process.env.NODE_ENV === 'production' ? 'http://47.93.229.170:8082/' : '/base/developer/'}`,
+  base: `${process.env.NODE_ENV === 'production' ? 'https://eug.asia:8082/' : '/base/developer/'}`,
   plugins: [
     react(),
     microCustomPlugin(),
@@ -30,7 +30,7 @@ export default ({ mode }) => defineConfig({
         }
       }
     }),
-    vitePluginForArco({style:'css'})
+    vitePluginForArco({ style: 'css' })
   ],
   resolve: {
     alias: {
@@ -53,6 +53,14 @@ export default ({ mode }) => defineConfig({
     }
   },
   build: {
+    // rollupOptions: {
+    //   external: ['vue'],
+    //   output: {
+    //     globals: {
+    //       vue: 'Vue',
+    //     },
+    //   },
+    // },
     assetsDir: 'assets',
     //设置为 false 来禁用将构建后的文件写入磁盘
     write: true,
@@ -62,6 +70,8 @@ export default ({ mode }) => defineConfig({
     brotliSize: true,
     //chunk 大小警告的限制
     chunkSizeWarningLimit: 1000,
+    // 默认情况下，Vite 会在构建阶段将 publicDir 目录中的所有文件复制到 outDir 目录中。可以通过设置该选项为 false 来禁用该行为
+    // copyPublicDir: false,
     // 移除console
     minify: 'terser',
     terserOptions: {
@@ -71,6 +81,20 @@ export default ({ mode }) => defineConfig({
         drop_debugger: true,
       },
     },
+    rollupOptions: {
+      output: {
+        // 拆分js
+        manualChunks: {
+          'lodash-es':['lodash-es'],
+          'acro-design': ['@arco-design/web-react'],
+          'react-redux': ['react-redux'],
+          'react-dom': ['react-dom'],
+          'react-router-dom': ['react-router-dom'],
+          'redux': ['redux'],
+          'react': ['react'],
+        }
+      }
+    }
   },
   // css: {
   //   // [WARNING] "@charset" must be the first rule in the file

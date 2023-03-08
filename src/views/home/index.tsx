@@ -1,8 +1,8 @@
 /*
  * @Author       : Eug
  * @Date         : 2022-04-11 14:33:18
- * @LastEditTime : 2022-04-11 15:25:35
- * @LastEditors  : Eug
+ * @LastEditTime : 2023-01-13 14:15:36
+ * @LastEditors  : eug yyh3531@163.com
  * @Descripttion : Descripttion
  * @FilePath     : /micro-react/src/views/home/index.tsx
  */
@@ -46,8 +46,9 @@ const Home: React.FC = () => {
 
   return (
     <BaseCard>
-      <h2 style={{'textAlign': 'center'}} >Home:{num} <Button onClick={() => setNum(num+1)}>click</Button></h2>
-      <HomeContext.Provider value={{ num, setNum }}>
+    111
+      {/* <h2 style={{'textAlign': 'center'}} >Home:{num} <Button onClick={() => setNum(num+1)}>click</Button></h2> */}
+      {/* <HomeContext.Provider value={{ num, setNum }}>
         <Tabs defaultActiveTab="Memo">
           <TabPane key="childA" title="父子通信A">
             <Typography.Paragraph>
@@ -75,7 +76,7 @@ const Home: React.FC = () => {
             </Typography.Paragraph>
           </TabPane>
         </Tabs>
-      </HomeContext.Provider>
+      </HomeContext.Provider> */}
     </BaseCard>
   );
 };

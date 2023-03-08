@@ -1,3 +1,13 @@
+/*
+ * @Author       : eug yyh3531@163.com
+ * @Date         : 2022-07-03 16:31:45
+ * @LastEditors  : eug yyh3531@163.com
+ * @LastEditTime : 2023-01-13 13:53:26
+ * @FilePath     : /micro-react/src/routes/index.tsx
+ * @Description  : filename
+ * 
+ * Copyright (c) 2023 by eug yyh3531@163.com, All Rights Reserved. 
+ */
 import React from "react";
 import { Routes, Route, Link, Outlet, useRoutes } from "react-router-dom";
 import {
@@ -13,7 +23,8 @@ import Home from "@/views/home";
 import NotFound from "@/views/not-found";
 import Todolist from "@/views/to-do-list";
 
-export const BaseRoutesURL = "/base/developer";
+// export const BaseRoutesURL = "/base/developer";
+export const BaseRoutesURL = "/";
 
 export const BaseRoutes: any[] = [
   {
