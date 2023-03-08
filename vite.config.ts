@@ -1,7 +1,7 @@
 /*
  * @Author       : Eug
  * @Date         : 2022-03-31 16:16:43
- * @LastEditTime : 2023-01-13 14:08:50
+ * @LastEditTime : 2023-03-08 18:18:36
  * @LastEditors  : eug yyh3531@163.com
  * @Descripttion : Descripttion
  * @FilePath     : /micro-react/vite.config.ts
@@ -88,10 +88,10 @@ export default ({ mode }) => defineConfig({
           'lodash-es':['lodash-es'],
           'acro-design': ['@arco-design/web-react'],
           'react-redux': ['react-redux'],
-          'react-dom': ['react-dom'],
+          // 'react-dom': ['react-dom'],
           'react-router-dom': ['react-router-dom'],
           'redux': ['redux'],
-          'react': ['react'],
+          // 'react': ['react'],
         }
       }
     }
