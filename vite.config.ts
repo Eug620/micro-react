@@ -1,7 +1,7 @@
 /*
  * @Author       : Eug
  * @Date         : 2022-03-31 16:16:43
- * @LastEditTime : 2023-03-08 18:18:36
+ * @LastEditTime : 2023-03-09 11:32:40
  * @LastEditors  : eug yyh3531@163.com
  * @Descripttion : Descripttion
  * @FilePath     : /micro-react/vite.config.ts
@@ -35,14 +35,13 @@ export default ({ mode }) => defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
-      // views: resolve(__dirname, './src/views'),
-      // components: resolve(__dirname, './src/components'),
-      // utils: resolve(__dirname, './src/utils'),
-      // less: resolve(__dirname, "./src/less"),
-      // assets: resolve(__dirname, "./src/assets"),
-      // com: resolve(__dirname, "./src/components"),
-      // store: resolve(__dirname, "./src/store"),
-      // mixins: resolve(__dirname, "./src/mixins")
+      views: resolve(__dirname, './src/views'),
+      components: resolve(__dirname, './src/components'),
+      utils: resolve(__dirname, './src/utils'),
+      less: resolve(__dirname, "./src/less"),
+      assets: resolve(__dirname, "./src/assets"),
+      store: resolve(__dirname, "./src/store"),
+      mixins: resolve(__dirname, "./src/mixins")
     },
     extensions: ['.js', '.json', '.ts', '.tsx'], // 使用路径别名时想要省略的后缀名，可以自己 增减
   },
@@ -50,6 +49,25 @@ export default ({ mode }) => defineConfig({
     port: 8082,
     headers: {
       'Access-Control-Allow-Origin': '*',
+    },
+    proxy: {
+      '/api': {
+        target: 'https://eug.asia/express/api',
+        // target: 'http://localhost:3000',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, '')
+      },
+      '/dev_base_api': {
+        // target: 'http://127.0.0.1:5000',
+        target: 'https://eug.asia/egg/api',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/dev_base_api/, '')
+      },
+      '/dev_han_api': {
+        target: 'https://api.vvhan.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/dev_han_api/, '')
+      },
     }
   },
   build: {
@@ -67,7 +85,7 @@ export default ({ mode }) => defineConfig({
     //默认情况下，若 outDir 在 root 目录下，则 Vite 会在构建时清空该目录。
     emptyOutDir: true,
     //启用/禁用 brotli 压缩大小报告
-    brotliSize: true,
+    // brotliSize: true,
     //chunk 大小警告的限制
     chunkSizeWarningLimit: 1000,
     // 默认情况下，Vite 会在构建阶段将 publicDir 目录中的所有文件复制到 outDir 目录中。可以通过设置该选项为 false 来禁用该行为
@@ -85,7 +103,7 @@ export default ({ mode }) => defineConfig({
       output: {
         // 拆分js
         manualChunks: {
-          'lodash-es':['lodash-es'],
+          'lodash-es': ['lodash-es'],
           'acro-design': ['@arco-design/web-react'],
           'acro-design-icon': ['@arco-design/web-react/icon'],
           'react-redux': ['react-redux'],

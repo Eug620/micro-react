@@ -1,7 +1,7 @@
 <!--
  * @Author       : Eug
  * @Date         : 2022-03-31 16:16:43
- * @LastEditTime : 2023-03-08 18:19:36
+ * @LastEditTime : 2023-03-09 11:24:27
  * @LastEditors  : eug yyh3531@163.com
  * @Descripttion : Descripttion
  * @FilePath     : /micro-react/index.html
@@ -12,6 +12,7 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= VITE_APP_TITLE %></title>
   <style>
@@ -19,9 +20,12 @@
     .app-react-loadings {
       width: 100%;
       height: 100%;
-      background: rgb(229, 231, 235);
+      /* background: rgb(229, 231, 235); */
       background-size: .12em 100%;
       font: 16em/1 Arial;
+      position: absolute;
+      top: 0;
+      right: 0;
     }
 
     .app-react-loadings .text--line {

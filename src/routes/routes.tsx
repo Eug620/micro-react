@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2022-08-24 15:06:57
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-03-09 10:52:45
+ * @LastEditTime : 2023-03-09 11:42:44
  * @FilePath     : /micro-react/src/routes/routes.tsx
  * @Description  : filename
  * 
@@ -71,19 +71,19 @@ const AuthWithLayout = ({ children }: any) => {
 export const MenuRoutes = [
     {
         icon: lazyLoadIcon('IconHome'),
-        name: 'dashboard',
+        name: '首页',
         path: '/dashboard',
         element: lazyLoad('home/index')
     },
     {
         icon: lazyLoadIcon('IconClockCircle'),
-        name: 'about',
+        name: '关于',
         path: '/about',
         element: lazyLoad('about/index')
     },
     {
         icon: lazyLoadIcon('IconCheck'),
-        name: 'todolist',
+        name: '待办',
         path: '/todolist/:id',
         element: lazyLoad('to-do-list/index')
     }
