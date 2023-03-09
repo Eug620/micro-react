@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2022-08-24 15:06:57
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-03-08 19:02:40
+ * @LastEditTime : 2023-03-09 10:52:45
  * @FilePath     : /micro-react/src/routes/routes.tsx
  * @Description  : filename
  * 
@@ -11,18 +11,21 @@
 
 import React, { lazy, Suspense } from 'react'
 import { Navigate, useRoutes } from 'react-router-dom'
-import * as Icons from "@arco-design/web-react/icon";
-import { resolveComponent } from '@/importRoutercom'
+import { IconSync } from "@arco-design/web-react/icon";
+import { resolveComponent, resolveIconComponent } from '@/importRoutercom'
+
 const FallbackRender = () => {
     return (
         <></>
     )
 }
 const lazyLoad = (moduleName: string): any => {
+
     const Moudule = resolveComponent(moduleName)
     return (
-        <Suspense fallback={<FallbackRender/>}>
+        <Suspense fallback={<FallbackRender />}>
             <Moudule />
+            {/* <Module/> */}
         </Suspense>
     )
 
@@ -40,22 +43,20 @@ const lazyLoad = (moduleName: string): any => {
     // )
 }
 const lazyLoadIcon = (iconName: string): any => {
-    // const IconModule = Icons[iconName]
-    // return <IconModule />
     const Module = lazy(() => {
         /* @vite-ignore */
         return import(`../../node_modules/@arco-design/web-react/icon/react-icon/${iconName}/index.js`)
     })
-    // console.log(moduleName, Module);
 
+    // const Moudule = resolveIconComponent(iconName)
     return (
-        // <Suspense fallback={<Loading/>}>
-        <Module />
-        // </Suspense>
+        <Suspense fallback={<IconSync spin />}>
+            <Module />
+            {/* <Moudule/> */}
+        </Suspense>
     )
 }
 
-console.log(Icons);
 
 // login页面校验
 const AuthWithLogin = ({ children }: any) => {
@@ -71,19 +72,19 @@ export const MenuRoutes = [
     {
         icon: lazyLoadIcon('IconHome'),
         name: 'dashboard',
-        path: '/base/developer/dashboard',
+        path: '/dashboard',
         element: lazyLoad('home/index')
     },
     {
         icon: lazyLoadIcon('IconClockCircle'),
         name: 'about',
-        path: '/base/developer/about',
+        path: '/about',
         element: lazyLoad('about/index')
     },
     {
         icon: lazyLoadIcon('IconCheck'),
         name: 'todolist',
-        path: '/base/developer/todolist/:id',
+        path: '/todolist/:id',
         element: lazyLoad('to-do-list/index')
     }
 ]
@@ -94,7 +95,7 @@ const BaseRouteInstance = [
         children: [
             {
                 path: '',
-                element: <Navigate to="/base/developer/dashboard" />
+                element: <Navigate to="/dashboard" />
             },
             ...MenuRoutes
         ]

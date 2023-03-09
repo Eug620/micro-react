@@ -87,6 +87,7 @@ export default ({ mode }) => defineConfig({
         manualChunks: {
           'lodash-es':['lodash-es'],
           'acro-design': ['@arco-design/web-react'],
+          'acro-design-icon': ['@arco-design/web-react/icon'],
           'react-redux': ['react-redux'],
           // 'react-dom': ['react-dom'],
           'react-router-dom': ['react-router-dom'],

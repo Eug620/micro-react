@@ -1,7 +1,7 @@
 /*
  * @Author       : Eug
  * @Date         : 2022-03-31 16:16:43
- * @LastEditTime : 2023-01-13 13:54:41
+ * @LastEditTime : 2023-03-09 10:42:09
  * @LastEditors  : eug yyh3531@163.com
  * @Descripttion : Descripttion
  * @FilePath     : /micro-react/src/main.tsx
@@ -24,7 +24,7 @@ if (window.eventCenterForMicroVue) {
 ReactDOM.render(
   // <React.StrictMode>
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename='/base/developer'>
       <App />
     </BrowserRouter>
   </Provider>
