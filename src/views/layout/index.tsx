@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2022-08-24 15:06:57
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-03-09 11:40:33
+ * @LastEditTime : 2023-03-10 09:56:17
  * @FilePath     : /micro-react/src/views/layout/index.tsx
  * @Description  : filename
  * 
@@ -74,8 +74,8 @@ const LayoutBase: React.FC = () => {
         <Header className="micro-react-layout-header">
           <BaseMenu mode="horizontal" />
         </Header>
-        <Layout className="animate__animated animate__fadeIn">
-          <Content className="micro-react-layout-content">
+        <Layout>
+          <Content className="micro-react-layout-content animate__animated animate__fadeIn">
             <Outlet />
           </Content>
         </Layout>
