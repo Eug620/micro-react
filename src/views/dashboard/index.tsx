@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2023-03-14 10:25:27
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-03-14 14:55:35
+ * @LastEditTime : 2023-03-14 15:31:59
  * @FilePath     : /micro-react/src/views/dashboard/index.tsx
  * @Description  : filename
  * 
@@ -59,7 +59,10 @@ function Dashboard() {
             .outerRadius(100)
             .innerRadius(50)
             .padRadius(10)
-            .cornerRadius(50)
+            .cornerRadius(10)
+
+
+
 
 
 
@@ -73,6 +76,37 @@ function Dashboard() {
                 // arc.centroid(d,i)
                 return d3.schemePaired[i] // 填充颜色
             })
+            .transition() // 过渡
+            .duration(2000)
+            .delay(500)
+            // .ease(d3.easeBounce)
+            .attrTween('d', test)
+
+
+        function test(d: any) {
+            // d.cornerRadius(50)
+            // return d
+
+            return function (t: any) {
+                // let arc = d3.arc().outerRadius(100)
+                // .innerRadius(50)
+                // .padRadius(10)
+                // .cornerRadius(50)
+
+                arc.cornerRadius(50)
+
+                let fn = d3.interpolate(
+                    {
+                        endAngle: d.startAngle,
+                        startAngle: d.startAngle,
+                        padAngle: d.padAngle
+                    },
+                    d
+                )
+                return arc(fn(t))
+            }
+        }
+        // .attr('d',() => arc.cornerRadius(30))
 
 
 
@@ -81,12 +115,6 @@ function Dashboard() {
         // .enter()
         // .append('path')
         // .attr('d', arc)
-
-
-        // 作者：Tonychen
-        // 链接：https://juejin.cn/post/7199161123974512698
-        // 来源：稀土掘金
-        // 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 
     }, [])
