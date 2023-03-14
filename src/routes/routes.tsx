@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2022-08-24 15:06:57
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-03-09 17:37:05
+ * @LastEditTime : 2023-03-14 10:44:53
  * @FilePath     : /micro-react/src/routes/routes.tsx
  * @Description  : filename
  * 
@@ -73,7 +73,7 @@ export const MenuRoutes = [
         icon: lazyLoadIcon('IconHome'),
         name: '首页',
         path: '/dashboard',
-        element: lazyLoad('home/index')
+        element: lazyLoad('dashboard/index'),
     },
     {
         icon: lazyLoadIcon('IconClockCircle'),
