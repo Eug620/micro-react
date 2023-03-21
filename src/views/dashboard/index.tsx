@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2023-03-14 10:25:27
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-03-14 15:31:59
+ * @LastEditTime : 2023-03-21 18:34:49
  * @FilePath     : /micro-react/src/views/dashboard/index.tsx
  * @Description  : filename
  * 
@@ -13,10 +13,11 @@ import { Button } from '@arco-design/web-react';
 import React, { useEffect, useState } from 'react'
 import './index.scss'
 
-function Dashboard() {
+
+
+const Dashboard = () => {
     useEffect(() => {
         console.log('start...');
-
         /**
          * 数据
          */
@@ -78,7 +79,7 @@ function Dashboard() {
             })
             .transition() // 过渡
             .duration(2000)
-            .delay(500)
+            // .delay(500)
             // .ease(d3.easeBounce)
             .attrTween('d', test)
 
@@ -117,12 +118,15 @@ function Dashboard() {
         // .attr('d', arc)
 
 
-    }, [])
+    }, [2])
+
+    const [count, setCount] = useState(2)
 
     return (
         <BaseCard className="dashboard-container">
             <div>Dashboard</div>
-
+            <div>{count}</div>
+            <Button onClick={() => setCount(count+1)}>click</Button>
             <div id="pie"></div>
         </BaseCard>
     )

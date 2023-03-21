@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2022-08-24 15:06:57
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-03-10 09:56:17
+ * @LastEditTime : 2023-03-21 18:34:58
  * @FilePath     : /micro-react/src/views/layout/index.tsx
  * @Description  : filename
  * 
@@ -13,6 +13,7 @@ import "./index.scss";
 import { Layout, Menu } from "@arco-design/web-react";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import { MenuRoutes } from "@/routes/routes";
+// import KeepAlive from '@/routes/keepAlive'
 
 const MenuItem = Menu.Item;
 const Header = Layout.Header;
@@ -28,13 +29,15 @@ function BaseMenu(props: any) {
   ) => {
     navigate(key);
   };
+
+  const renderMenus = MenuRoutes.filter(v => v.meta.isEle)
   return (
     <Menu
       selectedKeys={[defaultLocation.pathname]}
       {...props}
       onClickMenuItem={handleMenuChange}
     >
-      {MenuRoutes.map((route) => {
+      {renderMenus.map((route) => {
         return (
           <MenuItem
             key={route.path}
@@ -76,7 +79,9 @@ const LayoutBase: React.FC = () => {
         </Header>
         <Layout>
           <Content className="micro-react-layout-content animate__animated animate__fadeIn">
-            <Outlet />
+            {/* <KeepAlive activeName="/base/developer/dashboard" include={['/base/developer/dashboard']} isAsyncInclude> */}
+              <Outlet />
+            {/* </KeepAlive> */}
           </Content>
         </Layout>
       </Layout>

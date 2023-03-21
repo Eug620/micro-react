@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2022-08-24 15:06:57
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-03-14 10:44:53
+ * @LastEditTime : 2023-03-21 17:48:57
  * @FilePath     : /micro-react/src/routes/routes.tsx
  * @Description  : filename
  * 
@@ -74,18 +74,30 @@ export const MenuRoutes = [
         name: '首页',
         path: '/dashboard',
         element: lazyLoad('dashboard/index'),
+        meta: {
+            keepAlive: true,
+            isEle: true
+        }
     },
     {
         icon: lazyLoadIcon('IconClockCircle'),
         name: '关于',
         path: '/about',
-        element: lazyLoad('about/index')
+        element: lazyLoad('about/index'),
+        meta: {
+            keepAlive: true,
+            isEle: true
+        }
     },
     {
         icon: lazyLoadIcon('IconCheck'),
-        name: '待办',
+        name: '待办',   
         path: '/todolist/:id',
-        element: lazyLoad('to-do-list/index')
+        element: lazyLoad('to-do-list/index'),
+        meta: {
+            keepAlive: true,
+            isEle: false
+        }
     }
 ]
 const BaseRouteInstance = [
