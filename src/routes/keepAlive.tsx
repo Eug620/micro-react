@@ -107,3 +107,7 @@
 //  return <>{activatedRef.current && ReactDOM.createPortal(children, targetElement)}</>
 // }
 // export const KeepAliveComponent = memo(Component)
+
+export default function (params:any) {
+    return <></>
+}
