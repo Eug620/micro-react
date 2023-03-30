@@ -1,7 +1,7 @@
 /*
  * @Author       : Eug
  * @Date         : 2022-03-31 16:16:43
- * @LastEditTime : 2023-03-09 11:32:40
+ * @LastEditTime : 2023-03-30 16:37:44
  * @LastEditors  : eug yyh3531@163.com
  * @Descripttion : Descripttion
  * @FilePath     : /micro-react/vite.config.ts
@@ -11,6 +11,7 @@ import react from '@vitejs/plugin-react'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import { microCustomPlugin } from './build/vitePlugins'
 import vitePluginForArco from '@arco-plugins/vite-react'
+import viteCompression from 'vite-plugin-compression';
 
 const { resolve, join } = require('path')
 
@@ -21,6 +22,7 @@ const getEnvFn = (mode, target) => {
 export default ({ mode }) => defineConfig({
   base: `${process.env.NODE_ENV === 'production' ? 'https://eug.asia:8082/' : '/base/developer/'}`,
   plugins: [
+    viteCompression(),
     react(),
     microCustomPlugin(),
     createHtmlPlugin({
