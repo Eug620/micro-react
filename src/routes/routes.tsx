@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2022-08-24 15:06:57
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-03-21 17:48:57
+ * @LastEditTime : 2023-05-25 10:32:56
  * @FilePath     : /micro-react/src/routes/routes.tsx
  * @Description  : filename
  * 
@@ -70,7 +70,7 @@ const AuthWithLayout = ({ children }: any) => {
 }
 export const MenuRoutes = [
     {
-        icon: lazyLoadIcon('IconHome'),
+        icon: lazyLoadIcon('IconCommand'),
         name: '首页',
         path: '/dashboard',
         element: lazyLoad('dashboard/index'),
@@ -80,10 +80,20 @@ export const MenuRoutes = [
         }
     },
     {
-        icon: lazyLoadIcon('IconClockCircle'),
+        icon: lazyLoadIcon('IconCommon'),
         name: '关于',
         path: '/about',
         element: lazyLoad('about/index'),
+        meta: {
+            keepAlive: true,
+            isEle: true
+        }
+    },
+    {
+        icon: lazyLoadIcon('IconPalette'),
+        name: '创意',
+        path: '/excalidraw',
+        element: lazyLoad('excalidraw/index'),
         meta: {
             keepAlive: true,
             isEle: true
