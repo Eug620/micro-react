@@ -1,7 +1,7 @@
 /*
  * @Author       : Eug
  * @Date         : 2022-03-31 16:16:43
- * @LastEditTime : 2023-03-30 16:37:44
+ * @LastEditTime : 2023-05-30 16:37:49
  * @LastEditors  : eug yyh3531@163.com
  * @Descripttion : Descripttion
  * @FilePath     : /micro-react/vite.config.ts
@@ -109,6 +109,7 @@ export default ({ mode }) => defineConfig({
           'acro-design': ['@arco-design/web-react'],
           'acro-design-icon': ['@arco-design/web-react/icon'],
           'react-redux': ['react-redux'],
+          'three': ['three'],
           // 'react-dom': ['react-dom'],
           'react-router-dom': ['react-router-dom'],
           'redux': ['redux'],

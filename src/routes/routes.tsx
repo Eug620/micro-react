@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2022-08-24 15:06:57
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-05-25 10:32:56
+ * @LastEditTime : 2023-05-30 16:30:16
  * @FilePath     : /micro-react/src/routes/routes.tsx
  * @Description  : filename
  * 
@@ -94,6 +94,16 @@ export const MenuRoutes = [
         name: '创意',
         path: '/excalidraw',
         element: lazyLoad('excalidraw/index'),
+        meta: {
+            keepAlive: true,
+            isEle: true
+        }
+    },
+    {
+        icon: lazyLoadIcon('IconBug'),
+        name: '模型',
+        path: '/three',
+        element: lazyLoad('three/index'),
         meta: {
             keepAlive: true,
             isEle: true
