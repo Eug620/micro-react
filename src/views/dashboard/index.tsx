@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2023-03-14 10:25:27
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-03-21 18:34:49
+ * @LastEditTime : 2023-06-26 18:14:17
  * @FilePath     : /micro-react/src/views/dashboard/index.tsx
  * @Description  : filename
  * 
@@ -11,6 +11,7 @@
 import { BaseCard } from '@/components'
 import { Button } from '@arco-design/web-react';
 import React, { useEffect, useState } from 'react'
+import * as d3 from "d3";
 import './index.scss'
 
 
@@ -72,7 +73,7 @@ const Dashboard = () => {
             .data(arcs)
             .enter()
             .append('path')
-            .attr('d', arc)
+            .attr('d', arc as any)
             .attr('fill', (d: any, i: number) => {
                 // arc.centroid(d,i)
                 return d3.schemePaired[i] // 填充颜色
@@ -81,7 +82,7 @@ const Dashboard = () => {
             .duration(2000)
             // .delay(500)
             // .ease(d3.easeBounce)
-            .attrTween('d', test)
+            .attrTween('d', test as any)
 
 
         function test(d: any) {

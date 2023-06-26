@@ -1,7 +1,7 @@
 /*
  * @Author       : Eug
  * @Date         : 2022-03-31 16:16:43
- * @LastEditTime : 2023-05-30 16:37:49
+ * @LastEditTime : 2023-06-26 18:12:20
  * @LastEditors  : eug yyh3531@163.com
  * @Descripttion : Descripttion
  * @FilePath     : /micro-react/vite.config.ts
@@ -113,6 +113,7 @@ export default ({ mode }) => defineConfig({
           // 'react-dom': ['react-dom'],
           'react-router-dom': ['react-router-dom'],
           'redux': ['redux'],
+          'd3': ['d3'],
           // 'react': ['react'],
         }
       }
