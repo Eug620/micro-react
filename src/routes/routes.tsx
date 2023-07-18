@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2022-08-24 15:06:57
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-06-26 18:26:37
+ * @LastEditTime : 2023-07-18 14:17:07
  * @FilePath     : /micro-react/src/routes/routes.tsx
  * @Description  : filename
  * 
@@ -10,7 +10,7 @@
  */
 
 import React, { lazy, Suspense } from 'react'
-import { Navigate, useRoutes } from 'react-router-dom'
+import { Navigate, useRoutes, useLocation } from 'react-router-dom'
 import { IconSync } from "@arco-design/web-react/icon";
 import { resolveComponent, resolveIconComponent } from '@/importRoutercom'
 
@@ -19,6 +19,8 @@ const FallbackRender = () => {
         <></>
     )
 }
+
+
 const lazyLoad = (moduleName: string): any => {
 
     const Moudule = resolveComponent(moduleName)
@@ -141,6 +143,12 @@ const BaseRouteInstance = [
 
 const InitRoute = () => {
     // return useRoutes(BaseRouteInstance)
+    const Location = useLocation()
+    console.log(Location,'useLocation');
+    // window.microApp?.dispatch({type: Location})
+
+    // 子应用向基座应用发送数据，只接受对象作为参数
+    window?.eventCenterForMicroReact?.dispatch({type: Location})
     return (
         <Suspense fallback={<FallbackRender />}>
             {useRoutes(BaseRouteInstance)}
