@@ -2,7 +2,7 @@
  * @Author       : eug yyh3531@163.com
  * @Date         : 2022-08-24 15:06:57
  * @LastEditors  : eug yyh3531@163.com
- * @LastEditTime : 2023-07-18 14:17:07
+ * @LastEditTime : 2023-08-11 15:53:35
  * @FilePath     : /micro-react/src/routes/routes.tsx
  * @Description  : filename
  * 
@@ -106,6 +106,16 @@ export const MenuRoutes = [
         name: '模型',
         path: '/three',
         element: lazyLoad('three/index'),
+        meta: {
+            keepAlive: true,
+            isEle: true
+        }
+    },
+    {
+        icon: lazyLoadIcon('IconBgColors'),
+        name: '视觉',
+        path: '/vision',
+        element: lazyLoad('vision/index'),
         meta: {
             keepAlive: true,
             isEle: true
