@@ -20,7 +20,7 @@ const getEnvFn = (mode, target) => {
 }
 // https://vitejs.dev/config/
 export default ({ mode }) => defineConfig({
-  base: `${process.env.NODE_ENV === 'production' ? 'https://eug.asia:8082/' : '/base/developer/'}`,
+  base: `${process.env.NODE_ENV === 'production' ? '/micro-react/' : '/base/developer/'}`,
   plugins: [
     viteCompression(),
     react(),
