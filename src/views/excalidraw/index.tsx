@@ -11,6 +11,7 @@
 // import { BaseCard } from '@/components'
 import React from 'react'
 import { Excalidraw } from "@excalidraw/excalidraw";
+import { Card } from '@arco-design/web-react';
 
 // https://docs.excalidraw.com/docs/@excalidraw/excalidraw/installation
 export default function excalidraw() {
