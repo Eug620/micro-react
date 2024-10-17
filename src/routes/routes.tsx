@@ -81,16 +81,16 @@ export const MenuRoutes = [
             isEle: true
         }
     },
-    {
-        icon: lazyLoadIcon('IconCommon'),
-        name: '关于',
-        path: '/about',
-        element: lazyLoad('about/index'),
-        meta: {
-            keepAlive: true,
-            isEle: true
-        }
-    },
+    // {
+    //     icon: lazyLoadIcon('IconCommon'),
+    //     name: '关于',
+    //     path: '/about',
+    //     element: lazyLoad('about/index'),
+    //     meta: {
+    //         keepAlive: true,
+    //         isEle: true
+    //     }
+    // },
     {
         icon: lazyLoadIcon('IconPalette'),
         name: '创意',
@@ -101,26 +101,26 @@ export const MenuRoutes = [
             isEle: true
         }
     },
-    {
-        icon: lazyLoadIcon('IconBug'),
-        name: '模型',
-        path: '/three',
-        element: lazyLoad('three/index'),
-        meta: {
-            keepAlive: true,
-            isEle: true
-        }
-    },
-    {
-        icon: lazyLoadIcon('IconBgColors'),
-        name: '视觉',
-        path: '/vision',
-        element: lazyLoad('vision/index'),
-        meta: {
-            keepAlive: true,
-            isEle: true
-        }
-    },
+    // {
+    //     icon: lazyLoadIcon('IconBug'),
+    //     name: '模型',
+    //     path: '/three',
+    //     element: lazyLoad('three/index'),
+    //     meta: {
+    //         keepAlive: true,
+    //         isEle: true
+    //     }
+    // },
+    // {
+    //     icon: lazyLoadIcon('IconBgColors'),
+    //     name: '视觉',
+    //     path: '/vision',
+    //     element: lazyLoad('vision/index'),
+    //     meta: {
+    //         keepAlive: true,
+    //         isEle: true
+    //     }
+    // },
     {
         icon: lazyLoadIcon('IconCheck'),
         name: '待办',   

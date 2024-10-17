@@ -8,18 +8,18 @@
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
  */
-import { BaseCard } from '@/components'
+// import { BaseCard } from '@/components'
 import React from 'react'
 import { Excalidraw } from "@excalidraw/excalidraw";
 
 // https://docs.excalidraw.com/docs/@excalidraw/excalidraw/installation
 export default function excalidraw() {
     return (
-        <BaseCard>
-            <div style={{ height: "calc(100vh - 112px)" }} >
+        <Card style={{height: '100%'}}>
+            <div style={{ height: "calc(100vh - 80px)" }} >
                 <Excalidraw langCode='zh-CN' />
             </div>
-        </BaseCard>
+        </Card>
     )
 }
 

@@ -125,9 +125,9 @@ const Dashboard = () => {
 
     return (
         <BaseCard className="dashboard-container">
-            <div>Dashboard</div>
-            <div>{count}</div>
-            <Button onClick={() => setCount(count+1)}>click</Button>
+            {/* <div>Dashboard</div> */}
+            {/* <div>{count}</div> */}
+            {/* <Button onClick={() => setCount(count+1)}>click</Button> */}
             <div id="pie"></div>
         </BaseCard>
     )
