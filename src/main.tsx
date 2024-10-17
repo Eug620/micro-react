@@ -9,7 +9,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import './assets/styles/index.scss'
 import { Provider } from 'react-redux'
 import store from './store'
@@ -24,9 +24,11 @@ if (window.eventCenterForMicroVue) {
 ReactDOM.render(
   // <React.StrictMode>
   <Provider store={store}>
-    <BrowserRouter basename='/base/developer'>
+    {/* <BrowserRouter basename='/base/developer'> */}
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
+    {/* </BrowserRouter> */}
   </Provider>
   // </React.StrictMode>
   ,
