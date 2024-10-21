@@ -11,16 +11,13 @@
 // import { BaseCard } from '@/components'
 import React from 'react'
 import { Excalidraw } from "@excalidraw/excalidraw";
-import { Card } from '@arco-design/web-react';
 
 // https://docs.excalidraw.com/docs/@excalidraw/excalidraw/installation
 export default function excalidraw() {
     return (
-        <Card style={{height: '100%'}}>
-            <div style={{ height: "calc(100vh - 80px)" }} >
-                <Excalidraw langCode='zh-CN' />
-            </div>
-        </Card>
+        <div style={{ height: "100vh" }} >
+            <Excalidraw langCode='zh-CN' />
+        </div>
     )
 }
 

@@ -91,16 +91,7 @@ export const MenuRoutes = [
     //         isEle: true
     //     }
     // },
-    {
-        icon: lazyLoadIcon('IconPalette'),
-        name: '创意',
-        path: '/excalidraw',
-        element: lazyLoad('excalidraw/index'),
-        meta: {
-            keepAlive: true,
-            isEle: true
-        }
-    },
+
     // {
     //     icon: lazyLoadIcon('IconBug'),
     //     name: '模型',
@@ -133,6 +124,16 @@ export const MenuRoutes = [
     }
 ]
 const BaseRouteInstance = [
+    {
+        icon: lazyLoadIcon('IconPalette'),
+        name: '创意',
+        path: '/excalidraw',
+        element: lazyLoad('excalidraw/index'),
+        meta: {
+            keepAlive: true,
+            isEle: true
+        }
+    },
     {
         path: '/',
         element: lazyLoad('layout/index'),
